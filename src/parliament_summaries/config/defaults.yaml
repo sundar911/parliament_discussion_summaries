@@ -1,0 +1,34 @@
+runtime:
+  data_root: "data"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  logs_dir: "logs"
+  sqlite_path: "data/parliament.db"
+  cache_dir: "~/.cache/parliament-summaries"
+
+scraper:
+  base_url: "https://eparlib.sansad.in"
+  handle_path: "/handle/123456789/7"
+  user_agent: "ParliamentSummariesBot/0.1 (+https://github.com/user/parliament_discussion_summaries)"
+  request_interval_seconds: 1.5
+  max_retries: 4
+  timeout_seconds: 30
+  years_back: 10
+
+processing:
+  batch_size: 2
+  max_pages: null
+  enable_ocr: true
+  ocr_dpi: 300
+  ocr_languages: "eng+hin"
+  language_detection: "fasttext"
+  translation_model: "./models/indictrans2-indic-en"
+  summarisation_model: "google/pegasus-xsum"
+  max_summary_tokens: 256
+  device_preference: "mps"
+
+topics:
+  embedding_model: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+  cluster_method: "bertopic"
+  target_topics: 10
+  refresh_interval_days: 7

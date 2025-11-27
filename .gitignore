@@ -1,0 +1,6 @@
+/.DS_Store
+/data
+/.venv
+*.pem
+models/indictrans2-indic-en/
+*.log
