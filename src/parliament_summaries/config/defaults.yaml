@@ -25,7 +25,8 @@ processing:
   translation_model: "./models/indictrans2-indic-en"
   summarisation_model: "google/pegasus-xsum"
   max_summary_tokens: 256
-  device_preference: "mps"
+  # Use the GPU on AWS; fall back automatically if CUDA is unavailable.
+  device_preference: "cuda"
 
 topics:
   embedding_model: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"

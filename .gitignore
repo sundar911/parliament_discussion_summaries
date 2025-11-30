@@ -4,3 +4,4 @@
 *.pem
 models/indictrans2-indic-en/
 *.log
+*.csv
